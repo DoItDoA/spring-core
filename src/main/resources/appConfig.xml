@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 자바 appConfig 를 xml 로 표현-->
+    <bean id="memberService" class="springbasic.core.member.MemberServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/> <!--생성자-->
+    </bean>
+
+    <bean id="memberRepository" class="springbasic.core.member.MemoryMemberRepository"/>
+
+    <bean id="orderService" class="springbasic.core.order.OrderServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+        <constructor-arg name="discountPolicy" ref="discountPolicy"/>
+    </bean>
+
+    <bean id="discountPolicy" class="springbasic.core.discount.RateDiscountPolicy"/>
+</beans>
