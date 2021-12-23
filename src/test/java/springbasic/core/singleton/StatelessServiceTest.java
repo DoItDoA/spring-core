@@ -19,8 +19,8 @@ public class StatelessServiceTest {
         //ThreadB: B사용자 20000원 주문
         int userBPrice = statelessService2.order("userB", 20000);
 
-        System.out.println("price = " + userAPrice);
-
+        System.out.println("A price = " + userAPrice);
+        System.out.println("B price = " + userBPrice);
     }
 
     // 참고 대상

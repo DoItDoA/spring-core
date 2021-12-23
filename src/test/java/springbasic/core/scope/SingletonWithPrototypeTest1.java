@@ -42,21 +42,18 @@ public class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
     static class ClientBean {
-        // private final PrototypeBean prototypeBean; // 생성시점에 주입
+//         private final PrototypeBean prototypeBean; // 생성시점에 주입
 
         @Autowired
         private ObjectProvider<PrototypeBean> prototypeBeanProvider;
 
-        /*@Autowired
-        private Provider<PrototypeBean> provider;
-        */
+//        @Autowired
+//        private Provider<PrototypeBean> provider;
 
-        /*
-        @Autowired
-        public ClientBean(PrototypeBean prototypeBean) {
-            this.prototypeBean = prototypeBean;
-        }
-        */
+//        @Autowired
+//        public ClientBean(PrototypeBean prototypeBean) {
+//            this.prototypeBean = prototypeBean;
+//        }
         public int logic() {
             PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
             // PrototypeBean prototypeBean = provider.get();
@@ -81,7 +78,7 @@ public class SingletonWithPrototypeTest1 {
 
         @PostConstruct
         public void init() {
-            System.out.println("PrototypeBean.init " + this);
+            System.out.println("PrototypeBean.init    " + this);
         }
 
         @PreDestroy

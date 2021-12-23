@@ -20,11 +20,11 @@ public class LogDemoController {
     @ResponseBody
     public String logDemo(HttpServletRequest request) {
         String requestURL = request.getRequestURL().toString();
-
-        System.out.println("myLogger = " + myLogger.getClass());
+        System.out.println(1); // request 실행 직후라 이 시점에서 init함수 실행
+        System.out.println("myLogger = " + myLogger.getClass()); // 프록시 객체 정보 나옴
         //MyLogger myLogger = myLoggerProvider.getObject();
+        
         myLogger.setRequestURL(requestURL);
-
         myLogger.log("controller test");
         logDemoService.logic("testId");
         return "OK";

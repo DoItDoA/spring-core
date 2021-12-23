@@ -19,8 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 // 동일한 타입 둘 이상 빈 조회
 public class ApplicationSameBeanFindTest {
 
-    AnnotationConfigApplicationContext ac = new
-            AnnotationConfigApplicationContext(SameBeanConfig.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SameBeanConfig.class);
 
     @Test
     @DisplayName("타입으로 조회시 같은 타입이 둘 이상 있으면, 중복 오류가 발생한다")

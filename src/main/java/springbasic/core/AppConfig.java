@@ -30,13 +30,13 @@ public class AppConfig {
     // AppConfig에서도 각 역할의 분리
     @Bean
     public MemberRepository memberRepository() {
-        System.out.println("call AppConfig.memberService"); // ConfigurationSingletonTest 테스트용
+        System.out.println("call AppConfig.memberRepository"); // ConfigurationSingletonTest 테스트용
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        System.out.println("call AppConfig.memberService"); // ConfigurationSingletonTest 테스트용
+        System.out.println("call AppConfig.orderService"); // ConfigurationSingletonTest 테스트용
         return new OrderServiceImpl(discountPolicy(), memberRepository());
     }
 

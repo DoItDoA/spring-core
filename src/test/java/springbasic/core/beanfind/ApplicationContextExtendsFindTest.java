@@ -49,7 +49,7 @@ public class ApplicationContextExtendsFindTest {
         assertThat(beansOfType.size()).isEqualTo(2);
 
         for (String key : beansOfType.keySet()) {
-            System.out.println("key = " + key + " value=" + beansOfType.get(key));
+            System.out.println("key = " + key + "     value=" + beansOfType.get(key));
         }
     }
 
@@ -59,7 +59,7 @@ public class ApplicationContextExtendsFindTest {
         Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);
 
         for (String key : beansOfType.keySet()) {
-            System.out.println("key = " + key + " value=" + beansOfType.get(key));
+            System.out.println("key = " + key + "     value=" + beansOfType.get(key));
         }
     }
 
